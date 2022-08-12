@@ -20,23 +20,23 @@
                                 <img src="/images/logo-mercado-liebre.svg" alt="">
                             </div>
                            <div class="col-12 col-md-8 p-5">
-                            <form action="/users/login" method="POST">
+                            <form action="/users/login" method="POST" id="form-login">
                                 <div class="row product-detail">
 
                                     <div class="col-12 col-md-6">
-                                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                                        <label for="email" class="form-label">Email</label>
                                   <input 
                                   type="email" 
-                                  class="form-input"
+                                  class="form-input form-control"
                                  
-                                  id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                                  <small class="text-danger"><%= locals.errors && errors.email ? errors.email.msg : null %> </small>
+                                  id="email" aria-describedby="emailHelp" name="email">
+                                  <small class="text-danger" id="error-email"><%= locals.errors && errors.email ? errors.email.msg : null %> </small>
 
                                 </div>
                                 <div class="col-12 col-md-6">
-                                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                                  <input type="password" class="form-input" id="exampleInputPassword1" name="pass">
-                                  <small class="text-danger"><%= locals.errors && errors.pass ? errors.pass.msg : null %> </small>
+                                    <label for="pass" class="form-label">Contraseña</label>
+                                  <input type="password" class="form-input form-control" id="pass" name="pass">
+                                  <small class="text-danger" id="error-pass"><%= locals.errors && errors.pass ? errors.pass.msg : null %> </small>
 
                                 </div>
                                 <div class="col-12 col-md-6">
@@ -60,5 +60,6 @@
     </div>
 
     <%- include('partials/footer') %> 
+    <script src="/js/login.js"></script>
 </body>
 </html>

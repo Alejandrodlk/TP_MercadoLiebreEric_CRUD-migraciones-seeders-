@@ -44,6 +44,10 @@ module.exports = [
     ),
 
   body("pass2")
+    .notEmpty()
+    .withMessage(
+      "Debes validar tu contraseña"
+    )
     .custom((value, { req }) => {
       if (value !== req.body.pass) {
         return false;
